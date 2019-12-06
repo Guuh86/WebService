@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Usuários Cadastrados</title>
+</head>
+<body>
+
+<h2 align="center">Registros</h2>
+  
+<div align="center">
+  <table border="1">
+        <tr>
+            <td align="center" class="color">Nome</td>
+            <td align="center" class="color">Sobrenome</td>
+            <td align="center" class="color">Idade</td>
+            <td align="center" class="color">Sexo</td>
+        </tr>
+    <% data.forEach(function(details) { %>
+        <tr>
+            <td align="center"><%= details.name %></td>
+            <td align="center"><%= details.surname %></td>
+            <td align="center"><%= details.age %></td>
+            <td align="center"><%= details.sex %></td>
+            
+            <td align="center">
+              <a href="/edit/<%= details._id %>" class="edit">Editar</a> - 
+              <a href="/delete/<%= details._id %>" class="del">Apagar</a>
+            </td>
+        </tr>
+        <% }) %>
+  </table>
+</div>
+
+<div align="center" class="btn">
+  <button><a href="/">Cadastrar Novo</a></button>
+</div>
+
+
+</body>
+</html>
+
+<style type="text/css">
+  td{
+    justify-content: center;
+    padding: 5px 7px 5px 7px;
+  }
+  .color{
+    background-color: lightblue;
+  }
+  .del{
+    color: red;
+  }
+  .edit{
+    color: green;
+  }
+  .btn{
+    margin-top: 1%;
+  }
+</style>

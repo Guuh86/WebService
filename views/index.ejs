@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Cadastro</title>
+</head>
+<body>
+
+<h2 align="center">Registrar Pessoa</h2>
+
+<div align="center">
+<form action="/" method="POST" name="form" onSubmit="return validar()">
+    	<table border="1">
+    		<tr>
+    			<td>Nome:</td>
+    			<td><input type="text" name="name" id="name"></td>
+    		</tr>
+    		<tr>
+    			<td>Sobrenome:</td>
+    			<td><input type="text" name="surname" id="surname"></td>
+    		</tr>
+    		<tr>
+    			<td>Idade:</td>
+    			<td><input type="number" name="age" id="age"></td>
+    		</tr>
+    		<tr>
+    			<td>Sexo:</td>
+    			<td><input type="text" name="sex" id="sex"></td>
+    		</tr>
+    		<tr>
+                <td align="center" colspan="2">
+                    <button type="submit" class="bt">Cadastrar</button><br/>
+                    <button class="bt"><a href="/show">Mostrar Todos</a></button>
+                </td>
+    		</tr>
+    	</table>
+    </form>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    function validar(form){
+        if (
+            document.getElementById("name").value == "" ||
+            document.getElementById("surname").value == "" ||
+            document.getElementById("age").value == "" ||
+            document.getElementById("sex").value == ""        
+            ) {
+            alert("Por favor, preencha todos os campos!");
+            return false;
+        }
+    }
+</script>
+
+<style type="text/css">
+    td{
+     margin: 5px 7px 5px 7px;
+    }
+    .bt{
+        margin: 3px 0 3px 0;
+    }
+</style>

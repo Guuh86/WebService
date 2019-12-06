@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Cadastro</title>
+</head>
+<body>
+
+<h2 align="center">Editar Registro</h2>
+
+<div align="center">
+  <% data.forEach(function(details) { %>
+    <form action="/edit/<%= details._id %>" method="POST">
+      <table border="1">
+        <tr>
+          <td>Nome: </td>
+          <td><input type="text" value="<%= details.name %>" name="name"><br/></td>
+        </tr>
+        <tr>
+          <td>Sobrenome: </td>
+          <td><input type="text" value="<%= details.surname %>" name="surname"></td>
+        </tr>
+        <tr>
+          <td>Idade: </td>
+          <td><input type="number" value="<%= details.age %>" name="age"></td>
+        </tr>
+        <tr>
+          <td>Sexo: </td>
+          <td><input type="text" value="<%= details.sex %>" name="sex"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div align="center">
+              <button><a href="/show">Voltar</a></button>
+              <button type="submit">Salvar</button>
+            </div>
+          </td>
+        </tr>
+      </table>   
+    </form>
+  <% }) %>
+</div>
+
+</body>
+</html>
+
+<style type="text/css">
+  td{
+    justify-content: center;
+    padding: 2px 3px 2px 3px;
+  }
+  .color{
+    background-color: lightblue;
+  }
+  .btn{
+    margin-top: 1%;
+  }
+</style>
